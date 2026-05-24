@@ -34,8 +34,7 @@ const offeredArray: string[] =user.skillsOffered
             skill:request.skill
         }
         try{
-        const res = await api.post("/request/send",req)
-        console.log(res.data)
+        await api.post("/request/send",req)
         setSent(true)
         }
         catch(err){}

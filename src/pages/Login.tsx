@@ -11,6 +11,8 @@ export default function Login(){
         email:'',
         password:''
     });
+    const [loading, setLoading] = useState(false);
+
 
     const navigate=useNavigate();
 
@@ -20,11 +22,13 @@ export default function Login(){
         try{
             const res = await api.post<AuthResponse>("/auth/login",login)
             const data = res.data
-            console.log(data)
             Login(data.token)
             navigate("/dashboard")
         }
         catch(err){}
+        finally{
+            setLoading(false);
+        }
     }
 
     return <>
@@ -47,8 +51,8 @@ export default function Login(){
                                onChange={(e)=>setLogin({...login,password:e.target.value})}
                                className="rounded-xl border p-4 border-slate-300 focus:ring-2 focus:ring-sky-400 w-full"/>
                     </div>
-                    <button onClick={()=>Login} className=" bg-sky-500 h-[40px] rounded-xl w-full hover:bg-sky-600 transition text-white font-semibold">
-                        Log in
+                    <button disabled={loading} onClick={()=>Login} className=" bg-sky-500 h-[40px] rounded-xl w-full hover:bg-sky-600 transition text-white font-semibold">
+                        {loading? "Signing in" : "Log in"}
                     </button>
                     <p className="text-center text-slate-600">
                         New Here?{" "}

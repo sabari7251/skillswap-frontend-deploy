@@ -14,7 +14,6 @@ export default function Explore(){
         const res = await api.get("/user/allusers")
         const data = res.data
         setUsers(data)
-        console.log(data)
         }
         catch(err){}
 

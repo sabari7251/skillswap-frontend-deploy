@@ -20,7 +20,6 @@ export default function Request() {
     const fetchRequests = async () => {
         const res = await api.get("/request/viewlite")
         setRequests(res.data)
-        console.log(res.data)
     }
 
     useEffect(() => {

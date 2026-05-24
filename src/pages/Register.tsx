@@ -24,12 +24,11 @@ export default function Register() {
 
     try {
 
-        const res = await api.post(
+        await api.post(
             "/auth/register",
             register
         );
 
-        console.log(res.data);
 
     } catch (err: any) {
 

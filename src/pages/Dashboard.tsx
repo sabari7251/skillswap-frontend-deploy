@@ -33,7 +33,6 @@ export default function Dashboard() {
         try{
             const res = await api.get("/user/myprofile")
             const data = res.data
-            console.log(data)
             setProfile(data)
         }
         catch(err){console.log(err)}
@@ -44,7 +43,6 @@ export default function Dashboard() {
             const res = await api.get("/request/viewlite")
             const data = res.data
             setRequests(data)
-            console.log(data)
         }
         catch(err){console.log(err)}
     }
