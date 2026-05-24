@@ -22,6 +22,7 @@ export default function Login(){
         try{
             const res = await api.post<AuthResponse>("/auth/login",login)
             const data = res.data
+            setLoading(true);
             Login(data.token)
             navigate("/dashboard")
         }
