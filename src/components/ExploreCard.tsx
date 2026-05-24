@@ -18,7 +18,7 @@ const offeredArray: string[] =user.skillsOffered
         message:"",
         skill:""
     })
-    const [message,setMessage] = useState<string>("")
+    
     const[sent,setSent]=useState<boolean>(false)
 
     type sendRequestType={

@@ -14,12 +14,6 @@ export default function Login(){
 
     const navigate=useNavigate();
 
-    let authResponse:AuthResponse={
-        token:"",
-        email:"",
-        name:""
-    };
-
     const {Login} = useAuth()
     async function loginUser(e:React.FormEvent){
         e.preventDefault();

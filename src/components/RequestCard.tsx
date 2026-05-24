@@ -17,7 +17,7 @@ export default function RequestCard({request}:{request:viewRequestType}){
 
     const acceptRequest = async ()=>{
         try{
-            const res = await api.put(`/request/${request.id}/accept`)
+            await api.put(`/request/${request.id}/accept`)
             setAccepted(true)
 
         }
@@ -26,7 +26,7 @@ export default function RequestCard({request}:{request:viewRequestType}){
 
     const rejectRequest = async ()=>{
         try{
-            const res = await api.put(`/request/${request.id}/reject`)
+            await api.put(`/request/${request.id}/reject`)
             setRejected(true)
 
         }
